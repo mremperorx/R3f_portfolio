@@ -19,7 +19,7 @@ import mySQL from "./tech/mySQL.png"
 import itschool from "./company/itschool.jpg";
 import udemy from "./company/udemy.png";
 
-import victoriousstore from "./Projects/victoriousstore.png";
+import victoriousstore from "./Projects/Victoriousstore.png";
 import WeatherAPI from "./Projects/WeatherAPI.png";
 import LightRoom from "./lightroom.png";
 import DarkRoom from "./darkroom.png"
