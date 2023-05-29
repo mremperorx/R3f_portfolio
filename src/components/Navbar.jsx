@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { options } from "../constants";
-import { logo, menu, close } from "../assets";
+import { MyCV, menu, close } from "../assets";
 
 
 const Navbar = () => {
@@ -41,13 +41,13 @@ const Navbar = () => {
 
   useEffect(() => {
     switch(theme) {
-      case "dark":
-      element.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      break;
       case "light":
+      element.classList.add("dark");
+      localStorage.setItem("theme", "light");
+      break;
+      case "dark":
         element.classList.remove("dark");
-        localStorage.setItem("theme", "light");
+        localStorage.setItem("theme", "dark");
         break;
       default:
         localStorage.removeItem("theme");
@@ -55,12 +55,12 @@ const Navbar = () => {
         break;
     }
   }, [theme]);
-
+  
   return (
     <nav
       className={`${
         styles.paddingX
-      } w-full dark:bg-yellow-200 flex items-center py-5 fixed top-0 z-20  ${
+      } w-full  flex items-center py-5 fixed top-0 z-20 dark:bg-yellow-300 ${
         scrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
@@ -74,10 +74,9 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-15 h-9 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex '>
+          <p className='text-white text-[20px] font-bold cursor-pointer flex dark:text-black'>
             Majed &nbsp;
-            <span className='sm:block hidden'> El-Naser</span>
+            <span className='sm:block'> El-Naser</span>
           </p>
         </Link>
 
@@ -93,7 +92,14 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+          <a href={MyCV} download="MyCv.pdf" target="_blank" rel="noreferrer">
+           <button className="transition ease-in-out delay-150 bg-blue-500  px-5 rounded inline-flex items-center hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+           <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                    <span>CV</span>
+                </button>
+                </a>
         </ul>
+       
 
         <div className="list-none hidden sm:flex right-10  flex-row duration-100"
        onClick={() => setToggle(!toggle)}>
@@ -109,7 +115,7 @@ const Navbar = () => {
       }  
       </div>
 
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
+        <div className='sm:hidden  justify-end items-center'>
           <img
             src={toggle ? close : menu}
             alt='menu'
@@ -122,7 +128,7 @@ const Navbar = () => {
               !toggle ? "hidden" : "flex"
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
-            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
+            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-2'>
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
@@ -139,7 +145,7 @@ const Navbar = () => {
               ))}
             </ul>
 
-            <div className="list-none flex justify-end items-start flex-1 flex"
+            <div className="list-none flex justify-end items-start"
        onClick={() => setToggle(!toggle)}>
       {
         options?.map(opt => (
@@ -152,11 +158,19 @@ const Navbar = () => {
         ))
       }  
       </div>
-
-          </div>
+      <div className="list-none flex inset-x-0 bottom-0"
+       onClick={() => setToggle(!toggle)}> 
+         <a href={MyCV} download="MyCv.pdf" target="_blank" rel="noreferrer">
+           <button className="transition ease-in-out delay-150 bg-blue-500  px-5 rounded inline-flex items-center hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+           <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                    <span>CV</span>
+                </button>
+                </a>
         </div>
-      </div>
-    </nav>
+     </div>
+    </div>
+  </div>
+</nav>
   );
 };
 

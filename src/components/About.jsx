@@ -1,11 +1,11 @@
 import React from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../Warpper";
 import { fadeIn, textVariant } from "../utils/motion";
+import { Stars } from "@react-three/drei";
 
 const ServiceCard = ({ index, title, icon, link }) => (
   <Tilt className='xs:w-[250px] w-full'>
@@ -19,7 +19,7 @@ const ServiceCard = ({ index, title, icon, link }) => (
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
+        className='bg-zinc-900 rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
       >
         <img
           src={icon}
@@ -30,7 +30,7 @@ const ServiceCard = ({ index, title, icon, link }) => (
         <h3 className='text-white text-[20px] font-bold text-center'>
         <a href={link}>{title}</a>
         </h3>
-        
+       
       </div>
     </motion.div>
   </Tilt>
@@ -59,6 +59,7 @@ const About = () => {
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
+        
       </div>
     </>
   );

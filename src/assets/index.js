@@ -1,10 +1,8 @@
-import logo from "./logo.svg";
 import instagram from "./instagram.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 import linkedin from "./linkedin.png"
-
 import css from "./tech/css.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
@@ -18,15 +16,13 @@ import threejs from "./tech/threejs.svg";
 import mySQL from "./tech/mySQL.png"
 import itschool from "./company/itschool.jpg";
 import udemy from "./company/udemy.png";
-
 import victoriousstore from "./Projects/Victoriousstore.png";
 import WeatherAPI from "./Projects/WeatherAPI.png";
-import LightRoom from "./lightroom.png";
-import DarkRoom from "./darkroom.png"
-import Down from "./Down.svg"
+import Down from "./Down.svg";
+import Moon from "./moon.png"
+import MyCV from "./MyCv.pdf"
 
 export {
-  logo,
   instagram,
   linkedin,
   github,
@@ -47,7 +43,7 @@ export {
   victoriousstore,
   WeatherAPI,
   mySQL,
-  LightRoom,
-  DarkRoom,
   Down,
+  Moon,
+  MyCV,
 };

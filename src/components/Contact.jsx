@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-
 import { styles } from "../styles";
 import { EarthCanvas } from "./R3F";
 import { SectionWrapper } from "../Warpper";
 import { slideIn } from "../utils/motion";
+
+
 
 const Contact = () => {
   const formRef = useRef();
@@ -33,8 +34,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        "service_foyevif",
+        "template_3drqd7q",
         {
           from_name: form.name,
           to_name: "Majed El-Naser",
@@ -42,12 +43,12 @@ const Contact = () => {
           to_email: "majedalnasr7@outlook.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
+        "PN6XvcZSFGpUlA0do",
       )
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          alert("Thank you. I will get back to you as soon as possible.")
 
           setForm({
             name: "",
@@ -63,6 +64,7 @@ const Contact = () => {
         }
       );
   };
+
 
   return (
     <div
@@ -113,7 +115,7 @@ const Contact = () => {
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
-
+          
           <button
             type='submit'
             className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
@@ -121,6 +123,7 @@ const Contact = () => {
             {loading ? "Sending..." : "Send"}
           </button>
         </form>
+        
       </motion.div>
 
       <motion.div
