@@ -20,7 +20,9 @@ import victoriousstore from "./Projects/Victoriousstore.png";
 import WeatherAPI from "./Projects/WeatherAPI.png";
 import Down from "./Down.svg";
 import Moon from "./moon.png"
-import MyCV from "./MyCv.pdf"
+import MyCV from "./Majed El-Naser's CV.pdf"
+import ITAdviX from "./ITAdvix.png"
+
 
 export {
   instagram,
@@ -46,4 +48,6 @@ export {
   Down,
   Moon,
   MyCV,
+  ITAdviX,
+
 };

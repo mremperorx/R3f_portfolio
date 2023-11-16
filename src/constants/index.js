@@ -16,6 +16,9 @@ import {
   WeatherAPI,
   victoriousstore,
   threejs,
+  ITAdviX,
+
+
 } from "../assets";
 
 export const navLinks = [
@@ -165,9 +168,9 @@ const projects = [
     source_code_link: "https://github.com/mremperorx/shopping-cart",
   },
   {
-    name: "WeatherAPI",
+    name: "ITAdviX",
     description:
-      "Weather App uses the OpenWeatherMap Api. Bulit with HTML/CSS/TypeScript/Vite.",
+      "as the CEO and founder of ITAdvisX. I developed, designed, and managed all aspects of the website. I created and executed the vision for the website,oversaw development, managed content creationand marketing, and grew the website's online presence",
     tags: [
       {
         name: "react",
@@ -182,8 +185,8 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: WeatherAPI,
-    source_code_link: "https://github.com/mremperorx/WeatherAPI/",
+    image: ITAdviX,
+    source_code_link: "https://www.itadvisx.com/",
   },
 ];
 
